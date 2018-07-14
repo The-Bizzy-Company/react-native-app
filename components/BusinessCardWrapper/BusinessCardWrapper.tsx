@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  ViewStyle,
-  TouchableOpacity,
-  Animated
-} from "react-native";
+import { View, StyleSheet, ViewStyle, TouchableOpacity } from "react-native";
 
 interface IProps {
   children: React.ReactNode;
@@ -12,15 +7,13 @@ interface IProps {
 
 interface IState {
   isExpanded: boolean;
-  height: any;
 }
 
 export default class BusinessCardWrapper extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
-      isExpanded: false,
-      height: new Animated.Value(80)
+      isExpanded: false
     };
   }
 
@@ -28,31 +21,18 @@ export default class BusinessCardWrapper extends Component<IProps, IState> {
     this.setState({
       isExpanded: !this.state.isExpanded
     });
-
-    if (this.state.isExpanded) {
-      Animated.timing(this.state.height, {
-        toValue: 240,
-        duration: 400
-      }).start();
-    } else {
-      Animated.timing(this.state.height, {
-        toValue: 80,
-        duration: 400
-      }).start();
-    }
   };
 
   render() {
     return (
-      <TouchableOpacity style={{ width: "100%" }} onPress={this.extend}>
-        <Animated.View
-          style={[
-            stylesheet.BusinessCardWrapperStyle,
-            { height: this.state.height }
-          ]}
-        >
-          {this.props.children}
-        </Animated.View>
+      <TouchableOpacity
+        onPress={this.extend}
+        style={[
+          { height: this.state.isExpanded ? "auto" : 80 },
+          stylesheet.BusinessCardWrapperStyle
+        ]}
+      >
+        {this.props.children}
       </TouchableOpacity>
     );
   }

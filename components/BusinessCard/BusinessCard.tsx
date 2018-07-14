@@ -10,7 +10,7 @@ export default function BusinessCard(props: IProps) {
     <View style={stylesheet.BusinessCardStyle}>
       <WebView
         source={{ uri: props.uri }}
-        style={stylesheet.BusinessFrameStyle}
+        style={stylesheet.BusinessCardFrameStyle}
       />
     </View>
   );
@@ -24,10 +24,13 @@ const BusinessCardStyle: ViewStyle = {
   overflow: "hidden"
 };
 
-const BusinessFrameStyle: ViewStyle = {
+const BusinessCardFrameStyle: ViewStyle = {
   display: "flex",
   width: "100%",
   height: "100%"
 };
 
-const stylesheet = StyleSheet.create({ BusinessCardStyle, BusinessFrameStyle });
+const stylesheet = StyleSheet.create({
+  BusinessCardStyle,
+  BusinessCardFrameStyle
+});
