@@ -1,5 +1,6 @@
 import React from "react";
-import { View, StyleSheet, ViewStyle, WebView } from "react-native";
+import { View, WebView } from "react-native";
+import { Styles } from "./BusinessCard.style";
 
 interface IProps {
   uri: string;
@@ -7,30 +8,12 @@ interface IProps {
 
 export default function BusinessCard(props: IProps) {
   return (
-    <View style={stylesheet.BusinessCardStyle}>
+    <View style={Styles.BusinessCard}>
       <WebView
         source={{ uri: props.uri }}
-        style={stylesheet.BusinessCardFrameStyle}
+        javaScriptEnabled={true}
+        style={Styles.BusinessCardFrame}
       />
     </View>
   );
 }
-
-const BusinessCardStyle: ViewStyle = {
-  display: "flex",
-  height: 200,
-  width: "100%",
-  borderRadius: 10,
-  overflow: "hidden"
-};
-
-const BusinessCardFrameStyle: ViewStyle = {
-  display: "flex",
-  width: "100%",
-  height: "100%"
-};
-
-const stylesheet = StyleSheet.create({
-  BusinessCardStyle,
-  BusinessCardFrameStyle
-});

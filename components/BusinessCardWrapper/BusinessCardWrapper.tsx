@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { View, StyleSheet, ViewStyle, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
+import { Styles } from "./BusinessCardWrapper.style";
+// import Svg, { Path } from "react-native-svg";
 
 interface IProps {
   children: React.ReactNode;
@@ -29,7 +31,7 @@ export default class BusinessCardWrapper extends Component<IProps, IState> {
         onPress={this.extend}
         style={[
           { height: this.state.isExpanded ? "auto" : 80 },
-          stylesheet.BusinessCardWrapperStyle
+          Styles.BusinessCardWrapper
         ]}
       >
         {this.props.children}
@@ -38,18 +40,15 @@ export default class BusinessCardWrapper extends Component<IProps, IState> {
   }
 }
 
-const BusinessCardWrapperStyle: ViewStyle = {
-  display: "flex",
-  width: "100%",
-  overflow: "hidden",
-  borderRadius: 20,
-  padding: 20,
-  shadowOpacity: 1,
-  shadowRadius: 5,
-  shadowColor: "rgba(0,0,0, 0.6)",
-  shadowOffset: { height: 0, width: 0 },
-  marginBottom: 20,
-  backgroundColor: "white"
-};
-
-const stylesheet = StyleSheet.create({ BusinessCardWrapperStyle });
+{
+  /* <Svg
+  width="686"
+  height="86"
+  style={stylesheet.BusinessCardWrapperSvgStyle}
+>
+  <Path
+    d="M8.051 47.81h645.898c10.798 0 19.551 8.753 19.551 19.55v68.602c0 10.798-8.753 19.551-19.551 19.551h-408.4a97.662 97.662 0 0 0-53.503 15.96l-1.06.694a41.19 41.19 0 0 1-46.155-.694 88.54 88.54 0 0 0-50.71-15.96H8.05c-10.798 0-19.551-8.753-19.551-19.55V67.36c0-10.798 8.753-19.551 19.551-19.551z"
+    fill="green"
+  />
+</Svg> */
+}
