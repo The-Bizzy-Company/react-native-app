@@ -1,11 +1,11 @@
 import React from "react";
-import { View } from "react-native";
-import { styles } from "./Title.style";
+import { Text } from "react-native";
+import { Styles } from "./Title.style";
 
 interface IProps {
-  uri?: string;
+  content: string;
 }
 
 export default function Title(props: IProps) {
-  return <View style={styles.Title} />;
+  return <Text style={Styles.Title}>{props.content}</Text>;
 }

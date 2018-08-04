@@ -1,11 +1,15 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import { Styles } from "./Button.style";
 
 interface IProps {
-  uri: string;
+  content: string;
 }
 
 export default function Button(props: IProps) {
-  return <View style={Styles.Button} />;
+  return (
+    <View style={Styles.Button}>
+      <Text style={Styles.ButtonText}>{props.content}</Text>
+    </View>
+  );
 }
