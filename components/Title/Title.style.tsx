@@ -1,11 +1,10 @@
-import { StyleSheet, ViewStyle } from "react-native";
+import { StyleSheet, TextStyle } from "react-native";
+import { Colors } from "../../theme/Colors";
 
-const Title: ViewStyle = {
-  display: "flex",
-  height: 200,
-  width: "100%",
-  borderRadius: 10,
-  overflow: "hidden"
+const Title: TextStyle = {
+  fontSize: 36,
+  fontWeight: "800",
+  color: Colors.Blue.ExtraDark
 };
 
 export const Styles = StyleSheet.create({
